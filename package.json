@@ -1,0 +1,17 @@
+{
+  "name": "a2z",
+  "version": "1.0.0",
+  "description": "Bot For A2Z",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js --ignore *.json",
+    "start": "node app.js"
+  },
+  "author": "SDWORLLD",
+  "license": "ISC",
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.21.0",
+    "xlsx": "^0.18.5"
+  }
+}
