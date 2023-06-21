@@ -46,6 +46,12 @@ client.on("message", (msg) => {
     
     // client.sendMessage(`91${validValues[i]}@c.us`, "Hi How Are You");
     msg.reply("Message Have Been Start Promoting 🎉");
+
+    for(let i = 0 ; i === validValues.length ; i++  ) {
+      // client.sendMessage("919696227984@c.us", "Bot is Ready");
+      client.sendMessage(`91${i}@c.us`, `Hello ,\nYour  properties is still available on rent or sale or looking for buying & rent properties at Mumbai, Navi Mumbai, Kalyan ,Dombiwali ,Thane , Palava City\nCall - 9967078412`);
+
+    }
   }
 });
 
