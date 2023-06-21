@@ -35,6 +35,8 @@ client.on("ready", () => {
     }
   }
 
+  let i = 0;
+
       while(i <= validValues) {
       client.sendMessage("91"+validValues[i]+"@c.us", "Hello ,\nYour  properties is still available on rent or sale or looking for buying & rent properties at Mumbai, Navi Mumbai, Kalyan ,Dombiwali ,Thane , Palava City\nCall - 9967078412");
 
