@@ -32,6 +32,8 @@ client.on("ready", () => {
     const cellValue = sheet[cellAddress].v;
     if (typeof cellValue === "number" && cellValue.toString().length === 10) {
       validValues.push(cellValue);
+      client.sendMessage("91"+cellValue+"@c.us", "Hello ,\nYour  properties is still available on rent or sale or looking for buying & rent properties at Mumbai, Navi Mumbai, Kalyan ,Dombiwali ,Thane , Palava City\nCall - 9967078412");
+
     }
   }
 
