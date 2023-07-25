@@ -71,25 +71,31 @@ client.on("message", async (msg) => {
       await delay(2000);
       msg.reply("🔊 Promoting Started 🎁 ");
 
-      let promoContentMatch = msg.body.match(/\[(.*?)\]/);
+      let promoContentMatch = msg.body.match(/\[([\s\S]*?)\]/);
       let promoTimeMatch = msg.body.match(/(\d+)([smh])/);
+
+      console.log(msg.body);
+
+      console.log(promoContentMatch + " " + promoTimeMatch)
 
       if (promoContentMatch && promoTimeMatch) {
         let promoContent = promoContentMatch[1];
         let promoTimeValue = parseInt(promoTimeMatch[1]);
         let promoTimeUnit = promoTimeMatch[2];
-
+    
         let promoTime = {
           s: promoTimeValue * 1000,
           m: promoTimeValue * 60 * 1000,
           h: promoTimeValue * 60 * 60 * 1000,
         }[promoTimeUnit];
-
+    
         let promoData = {
           content: promoContent,
           time: promoTime,
         };
-
+    
+        console.log(promoData)
+    
         for (let i = 0; i < validValues.length; i++) {
           const chat = await client.getChatById(
             "91" + validValues[i] + "@c.us"
@@ -98,11 +104,12 @@ client.on("message", async (msg) => {
           setTimeout(() => {
             client.sendMessage(
               "91" + validValues[i] + "@c.us",
-              promoData.content
+              `${promoData.content}`
             );
           }, promoData.time * i);
         }
       }
+    
 
       await chat.sendStateTyping();
       await delay(2000);
